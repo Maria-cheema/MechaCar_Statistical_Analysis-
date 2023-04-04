@@ -15,14 +15,14 @@
 ## Linear Regression to Predict MPG
  ![image](https://user-images.githubusercontent.com/120526544/229679445-bf0ed361-2818-47f7-beac-12d63d9ec177.png)
 
-•	Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset? <br>
-  o	As from the above picture we can see that the non-random amount of variance to the mpg value in the dataset provided are Vehicle length, Ground Clearance and AWD. The p-value: 5.35e-11, which is less than 0.05 indicates statistically significant in predicting the mpg values.<br>
+#####	Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset? <br>
+  -	As from the above picture we can see that the non-random amount of variance to the mpg value in the dataset provided are Vehicle length, Ground Clearance and AWD. The p-value: 5.35e-11, which is less than 0.05 indicates statistically significant in predicting the mpg values.<br>
 
-•	Is the slope of the linear model considered to be zero? Why or why not?<br>
-  o	The slope of the linear model is not considered to be zero. The p-value: 5.35e-11 is less than 0.05, which indicates that it can reject or null hypothesis. <br>
+#####	Is the slope of the linear model considered to be zero? Why or why not?<br>
+  -	The slope of the linear model is not considered to be zero. The p-value: 5.35e-11 is less than 0.05, which indicates that it can reject or null hypothesis. <br>
 
-•	Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?<br>
-  o	The R-squared value of linear model is  0.7149, which is approximately 71.49% of all mpg projections in the linear progression model. R-square is not the only dataset which is effective, there might be other variables that are not included in the dataset that may also affect the mpg in the dataset.
+#####	Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?<br>
+  -	The R-squared value of linear model is  0.7149, which is approximately 71.49% of all mpg projections in the linear progression model. R-square is not the only dataset which is effective, there might be other variables that are not included in the dataset that may also affect the mpg in the dataset.
 ## Summary Statistics on Suspension Coils
 ### Total Summary:
  ![image](https://user-images.githubusercontent.com/120526544/229680188-1e1a9128-e2a3-42d0-8b32-fba98ecdde02.png)
