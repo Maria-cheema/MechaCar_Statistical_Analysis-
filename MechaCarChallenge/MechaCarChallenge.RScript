@@ -1,0 +1,48 @@
+MechaCarChallenge.RScripsetwd("C:/Users/maria/Desktop/HW/MechaCar_Statistical_Analysis-/MechaCarChallenge")
+# --------------------------DELIVERABLE 1------------------------------
+# load the dplyr package.......
+library(dplyr)
+# Import the MechaCar_mpg.csv file
+MechaCar_mpg <- read_csv("MechaCar_mpg.csv",check.names=F,stringsAsFactors = F)
+MechaCar_mpg <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
+head(MechaCar_mpg_df)
+head(MechaCar_mpg)
+# Perform linear regression on the MechaCar_mpg dataframe
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD + mpg, data = MechaCar_mpg)
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data = MechaCar_mpg)
+# Use summary() function to get p-value and r-squared value for the linear regression model
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=MechaCar_mpg))
+# ----------Part 2: Create Visualizations for the Trip Analysis-------
+# load the dataset
+Suspension_Coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+#  Create a total_summary dataframe using the summarize() function to get the mean, median, variance, and standard deviation.
+total_summary <- Suspension_Coil %>%
+summarize(
+Mean_PSI = mean(PSI),
+Median_PSI = median(PSI),
+Variance_PSI = var(PSI),
+SD_PSI = sd(PSI)
+)
+View(total_summary)
+#  creates a lot_summary dataframe using the group_by() and the summarize() functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+lot_summary <- suspension_coil_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+lot_summary <- suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+lot_summary <- Suspension_Coil %>%
+group_by(Manufacturing_Lot) %>%
+summarize(mean_PSI = mean(PSI), median_PSI = median(PSI), var_PSI = var(PSI), sd_PSI = sd(PSI))
+View(lot_summary)
+lot_summary <- suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+View(lot_summary)
+View(total_summary)
+View(lot_summary)
+View(Suspension_Coil)
+View(total_summary)
+View(lot_summary)
+# ---------Part 3: T-Tests on Suspension Coils-------------
+# using the t.test() function to determine if the PSI across all manufacturing lots is statistically different from the population mean of 1,500 pounds per square inch.
+t.test(Suspension_Coil$PSI, mu = 1500)
+# t.test for Lot1, Lot2 and Lot3
+t.test(subset(Suspension_Coil, Manufacturing_Lot == "Lot1")$PSI, mu = 1500)
+t.test(subset(Suspension_Coil, Manufacturing_Lot == "Lot2")$PSI, mu = 1500)
+t.test(subset(Suspension_Coil, Manufacturing_Lot == "Lot3")$PSI, mu = 1500)
